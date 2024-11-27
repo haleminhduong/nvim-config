@@ -22,3 +22,13 @@ require('mason-lspconfig').setup({
     lsp.default_setup,
   },
 })
+
+
+require('lspconfig').denols.setup({
+  root_dir = function() return vim.loop.cwd() end,  -- Use current working directory
+  init_options = {
+    enable = true,
+    unstable = true,
+  },
+  single_file_support = true,  -- Enable single file support
+})
